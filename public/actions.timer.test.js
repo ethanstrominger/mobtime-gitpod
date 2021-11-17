@@ -60,7 +60,7 @@ test('can pause the timer', t => {
   const initialState = {
     websocket: originalWebsocket,
     timerStartedAt: originalTimerStartedAt,
-    currentTime: originalCurrentTime,
+    actionTime: originalCurrentTime,
     timerDuration: 2000,
   };
 
@@ -69,7 +69,7 @@ test('can pause the timer', t => {
   t.deepEqual(state, {
     websocket: originalWebsocket,
     timerStartedAt: null,
-    currentTime: now,
+    actionTime: now,
     timerDuration: expectedTimerDuration,
   });
 
@@ -90,7 +90,7 @@ test('can resume the timer', t => {
   const initialState = {
     websocket,
     timerStartedAt: beforeNow,
-    currentTime: now,
+    actionTime: now,
     timerDuration: 1000000,
   };
 
@@ -99,7 +99,7 @@ test('can resume the timer', t => {
   t.deepEqual(state, {
     websocket,
     timerStartedAt: now,
-    currentTime: now,
+    actionTime: now,
     timerDuration: 1000000,
   });
 
@@ -132,7 +132,7 @@ test('can start the timer', t => {
   t.deepEqual(state, {
     websocket,
     timerStartedAt: now,
-    currentTime: now,
+    actionTime: now,
     timerDuration,
     settings: {
       duration: timerDuration,

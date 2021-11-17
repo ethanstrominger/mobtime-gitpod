@@ -54,7 +54,7 @@ export const Init = (_, timerId) => ({
   drag: { ...emptyDrag },
   prompt: { ...emptyPrompt },
   timerId,
-  currentTime: null,
+  actionTime: null,
   name: '',
   goal: '',
   addMultiple: false,
@@ -70,10 +70,10 @@ export const SetAddMultiple = (state, addMultiple) => ({
   addMultiple: Boolean(addMultiple),
 });
 
-export const SetCurrentTime = (state, { currentTime, documentElement }) => {
+export const SetCurrentTime = (state, { actionTime, documentElement }) => {
   const nextState = {
     ...state,
-    currentTime,
+    actionTime,
   };
   const remainingTime = calculateTimeRemaining(nextState);
 
@@ -567,8 +567,8 @@ export const UpdateGoalText = (state, goal) => [
   },
 ];
 
-export const PauseTimer = (state, currentTime = Date.now()) => {
-  const elapsed = currentTime - state.timerStartedAt;
+export const PauseTimer = (state, actionTime = Date.now()) => {
+  const elapsed = actionTime - state.timerStartedAt;
   const timerDuration = Math.max(0, state.timerDuration - elapsed);
 
   return [
@@ -576,7 +576,7 @@ export const PauseTimer = (state, currentTime = Date.now()) => {
       ...state,
       timerStartedAt: null,
       timerDuration,
-      currentTime,
+      actionTime,
     },
     effects.PauseTimer({
       websocket: state.websocket,
@@ -589,7 +589,7 @@ export const ResumeTimer = (state, timerStartedAt = Date.now()) => [
   {
     ...state,
     timerStartedAt,
-    currentTime: timerStartedAt,
+    actionTime: timerStartedAt,
   },
   effects.StartTimer({
     websocket: state.websocket,
@@ -601,7 +601,7 @@ export const StartTimer = (state, { timerStartedAt, timerDuration }) => [
   {
     ...state,
     timerStartedAt,
-    currentTime: timerStartedAt,
+    actionTime: timerStartedAt,
     timerDuration,
   },
   effects.StartTimer({
