@@ -50,7 +50,7 @@ export const Init = (_, timerId) => ({
     duration: 5 * 60 * 1000,
   },
   expandedReorderable: null,
-  timerTab: 'overview',
+  timerTab: 'mob',
   drag: { ...emptyDrag },
   prompt: { ...emptyPrompt },
   timerId,

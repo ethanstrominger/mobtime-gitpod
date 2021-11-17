@@ -128,14 +128,6 @@ app({
                 h(
                   tab,
                   {
-                    selected: state.timerTab === 'overview',
-                    onclick: [actions.SetTimerTab, 'overview'],
-                  },
-                  'Overview',
-                ),
-                h(
-                  tab,
-                  {
                     selected: state.timerTab === 'mob',
                     onclick: [actions.SetTimerTab, 'mob'],
                     details:
@@ -143,6 +135,14 @@ app({
                       h(badge, {}, state.mob.length.toString()),
                   },
                   'Mob',
+                ),
+                h(
+                  tab,
+                  {
+                    selected: state.timerTab === 'overview',
+                    onclick: [actions.SetTimerTab, 'overview'],
+                  },
+                  'Overview',
                 ),
                 h(
                   tab,
