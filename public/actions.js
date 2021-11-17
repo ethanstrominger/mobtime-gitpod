@@ -59,7 +59,7 @@ export const Init = (_, timerId) => ({
   goal: '',
   addMultiple: false,
   allowNotification: initialNotificationPermission === 'granted',
-  allowSound: false,
+  allowSound: true,
   notificationPermissions: initialNotificationPermission,
   pendingSettings: {},
   websocket: null,
