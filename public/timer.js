@@ -113,26 +113,18 @@ app({
             h(timeRemaining, state),
 
             h(
-              'div',
+              checkbox,
               {
-                class: 'text-sm mb-2',
+                id: 'enable-sound',
+                checked: state.allowSound,
+                inputProps: {
+                  onchange: (_, event) => [
+                    actions.SetAllowSound,
+                    event.target.checked,
+                  ],
+                },
               },
-              [
-                h(
-                  checkbox,
-                  {
-                    id: 'enable-sound',
-                    checked: state.allowSound,
-                    inputProps: {
-                      onchange: (_, event) => [
-                        actions.SetAllowSound,
-                        event.target.checked,
-                      ],
-                    },
-                  },
-                  h('span', { class: 'text-2xl' }, 'Enable timer sounds'),
-                ),
-              ],
+              h('span', { class: 'text-2xl' }, 'Enable timer sounds'),
             ),
 
             h(
@@ -333,6 +325,8 @@ app({
                 },
                 'Notifications',
               ),
+
+              // Todo: Get rid of 2 levels. Remove from time page. Turn into a component.
               h(section, {}, [
                 h(
                   'div',
