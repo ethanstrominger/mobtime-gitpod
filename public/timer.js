@@ -115,6 +115,29 @@ app({
             h(
               'div',
               {
+                class: 'text-sm mb-2',
+              },
+              [
+                h(
+                  checkbox,
+                  {
+                    id: 'enable-sound',
+                    checked: state.allowSound,
+                    inputProps: {
+                      onchange: (_, event) => [
+                        actions.SetAllowSound,
+                        event.target.checked,
+                      ],
+                    },
+                  },
+                  h('span', { class: 'text-2xl' }, 'Enable timer sounds'),
+                ),
+              ],
+            ),
+
+            h(
+              'div',
+              {
                 class: {
                   "flex": true,
                   'flex-row': true,
