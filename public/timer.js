@@ -16,6 +16,7 @@ import { mobActions } from '/sections/mobActions.js';
 import { mobParticipants } from '/sections/mobParticipants.js';
 import { qrShare } from '/sections/qrShare.js';
 import { timeRemaining } from '/sections/timeRemaining.js';
+import { toggleSound } from '/sections/toggleSound.js';
 import { mobOrder } from '/settings/mobOrder.js';
 import { setLength } from '/settings/setLength.js';
 import * as subscriptions from '/subscriptions.js';
@@ -111,6 +112,9 @@ app({
             h(header),
 
             h(timeRemaining, state),
+
+            // Todo: Refactor to turn into a component.
+            h(toggleSound, state),
 
             h(
               checkbox,
@@ -326,7 +330,6 @@ app({
                 'Notifications',
               ),
 
-              // Todo: Get rid of 2 levels. Remove from time page. Turn into a component.
               h(section, {}, [
                 h(
                   'div',
