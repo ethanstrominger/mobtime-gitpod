@@ -16,7 +16,8 @@
     "deploy": "node ./deploy/index.js",
     "test": "ava",
     "test:coverage": "nyc ava",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "launch": "yarn && yarn tailwind:dev && yarn start"
   },
   "dependencies": {
     "@mrbarrysoftware/js-enumerize": "^1.1.0",
