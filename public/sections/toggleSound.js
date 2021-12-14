@@ -12,6 +12,6 @@ export const toggleSound = props => {
         onchange: (_, event) => [actions.SetAllowSound, event.target.checked],
       },
     },
-    h('span', { class: 'text-2xl' }, 'Enable timer sounds (copy)'),
+    h('span', { class: 'text-2xl' }, 'Enable timer sounds'),
   );
 };

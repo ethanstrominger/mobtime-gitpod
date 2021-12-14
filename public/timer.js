@@ -117,21 +117,6 @@ app({
             h(toggleSound, state),
 
             h(
-              checkbox,
-              {
-                id: 'enable-sound',
-                checked: state.allowSound,
-                inputProps: {
-                  onchange: (_, event) => [
-                    actions.SetAllowSound,
-                    event.target.checked,
-                  ],
-                },
-              },
-              h('span', { class: 'text-2xl' }, 'Enable timer sounds'),
-            ),
-
-            h(
               'div',
               {
                 class: {
