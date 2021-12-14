@@ -4,7 +4,7 @@ import * as Action from './actions';
 import { Http } from './http';
 import { Websocket } from './websocket';
 
-const port = process.env.PORT || 1234;
+const port = process.env.PORT || 3000;
 
 const Storage = storage.make();
 
