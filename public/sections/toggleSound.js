@@ -1,3 +1,3 @@
 export const toggleSound = props => {
-  return <p>Sound toggle goes here</p>;
+  return '(<p>Sound toggle goes here</p>)';
 };
