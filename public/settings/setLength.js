@@ -16,48 +16,40 @@ const value = (key, { pendingSettings, settings }) =>
   key in pendingSettings ? pendingSettings[key] : settings[key];
 
 export const setLength = props =>
-  h(
-    base,
-    {
-      title: 'Turn Duration',
-    },
-    [
-      h(input, {
-        name: 'setLength',
-        maxlength: 2,
-        pattern: '[1-9][0-9]?',
-        value: toMinutes(value('duration', props)),
-        oninput: [
-          actions.PendingSettingsSet,
-          e => ({
-            key: 'duration',
-            value: toSeconds(e.target.value),
-          }),
-        ],
-        onblur: [actions.UpdateSettings],
-
+  h(base, {}, [
+    h(
+      'span',
+      {
         class: {
-          'text-4xl': true,
-          'font-extrabold': true,
-          'hover:border-indigo-300': true,
-          'hover:border-b-solid': true,
-          'bg-indigo-600': true,
-          'text-white': true,
-          'w-1/3': true,
-          'text-center': true,
+          'mb-3': true,
+          'text-2xl': true,
         },
-      }),
-      h(
-        'span',
-        {
-          class: {
-            'mb-3': true,
-            'text-2xl': true,
-            'font-bold': true,
-            "uppercase": true,
-          },
-        },
-        'minutes',
-      ),
-    ],
-  );
+      },
+      'Turn Duration (minutes):',
+    ),
+    h(input, {
+      name: 'setLength',
+      maxlength: 2,
+      pattern: '[1-9][0-9]?',
+      value: toMinutes(value('duration', props)),
+      oninput: [
+        actions.PendingSettingsSet,
+        e => ({
+          key: 'duration',
+          value: toSeconds(e.target.value),
+        }),
+      ],
+      onblur: [actions.UpdateSettings],
+
+      class: {
+        'text-4xl': true,
+        'font-extrabold': true,
+        'hover:border-indigo-300': true,
+        'hover:border-b-solid': true,
+        'bg-indigo-600': true,
+        'text-white': true,
+        'w-1/3': true,
+        'text-center': true,
+      },
+    }),
+  ]);
