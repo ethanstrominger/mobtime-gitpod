@@ -271,10 +271,6 @@ app({
                   pendingSettings: state.pendingSettings,
                 },
                 [
-                  h(setLength, {
-                    pendingSettings: state.pendingSettings,
-                    settings: state.settings,
-                  }),
                   h(mobOrder, {
                     pendingSettings: state.pendingSettings,
                     settings: state.settings,
