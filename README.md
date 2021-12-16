@@ -1,5 +1,7 @@
 # mobtime
 
+See https://docs.google.com/document/d/1x7Q7gj5T2reQHIb8eQARVer2ygMMT3j9ifAESlMUuVI/ for current information on this fork
+
 A websocket powered, collaborative mobbing timer.
 
 On your desktop:
