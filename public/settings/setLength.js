@@ -34,6 +34,7 @@ export const setLength = props =>
             value: toSeconds(e.target.value),
           }),
         ],
+        onblur: [actions.UpdateSettings],
 
         class: {
           'text-4xl': true,

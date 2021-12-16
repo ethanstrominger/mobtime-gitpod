@@ -115,6 +115,10 @@ app({
 
             // Todo: Refactor to turn into a component.
             h(toggleSound, state),
+            h(setLength, {
+              pendingSettings: state.pendingSettings,
+              settings: state.settings,
+            }),
 
             h(
               'div',
