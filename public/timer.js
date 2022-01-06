@@ -144,14 +144,15 @@ app({
                   },
                   'Mob',
                 ),
-                h(
-                  tab,
-                  {
-                    selected: state.timerTab === 'overview',
-                    onclick: [actions.SetTimerTab, 'overview'],
-                  },
-                  'Overview',
-                ),
+                // TODO: Move 'Top Goals' section to the bottom of the default tab
+                // h(
+                //   tab,
+                //   {
+                //     selected: state.timerTab === 'overview',
+                //     onclick: [actions.SetTimerTab, 'overview'],
+                //   },
+                //   'Overview',
+                // ),
                 h(
                   tab,
                   {
