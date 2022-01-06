@@ -7,6 +7,7 @@
     "type": "git",
     "url": "https://github.com/mrozbarry/mobtime.git"
   },
+  "homepage": "https://ethanstrominger.github.io/mobtime",
   "scripts": {
     "dev": "nodemon --ignore public ./index.js",
     "tailwind:dev": "postcss ./src/styles/index.css -o ./public/styles/styles.css",
@@ -17,7 +18,8 @@
     "test": "ava",
     "test:coverage": "nyc ava",
     "postinstall": "husky install",
-    "launch": "yarn && yarn tailwind:dev && yarn start"
+    "launch": "yarn && yarn tailwind:dev && yarn start",
+    "github-deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@mrbarrysoftware/js-enumerize": "^1.1.0",
@@ -42,6 +44,7 @@
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-config-prettier": "^6.12.0",
     "eslint-plugin-import": "^2.20.1",
+    "gh-pages": "^3.2.3",
     "husky": "^5",
     "lint-staged": ">=10",
     "morgan": "^1.10.0",
