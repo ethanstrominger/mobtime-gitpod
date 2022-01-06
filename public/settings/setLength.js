@@ -1,4 +1,5 @@
 import { h } from '/vendor/hyperapp.js';
+import { section } from '/components/section.js';
 
 import { input } from '/components/input.js';
 import { base } from '/settings/base.js';
@@ -16,7 +17,7 @@ const value = (key, { pendingSettings, settings }) =>
   key in pendingSettings ? pendingSettings[key] : settings[key];
 
 export const setLength = props =>
-  h(base, {}, [
+  h(section, null, [
     h(
       'span',
       {
